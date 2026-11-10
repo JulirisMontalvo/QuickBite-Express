@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>QuickBite Express</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- SCREEN 1: HERO / HOME PAGE -->
+  <div id="screen-1">
+    
+    <!-- APP HEADER (Title & Tagline) -->
+    <div id="app-header">
+      <h1>QuickBite Express</h1>
+      <p>Where you can order food and have it ready in minutes!</p>
+    </div>
+    
+    <!-- HERO SECTION (Banner Image & Start Button) -->
+    <div class="hero-section">
+      <img src="https://images.unsplash.com/photo-1561758033-d89a9ad46330?w=600&q=80" alt="Fast Food Spread" id="hero-banner-img">
+      <button id="start-order-btn">Start an order</button>
+    </div>
+
+  </div>
+
+  <!-- SCREEN 2: CHOOSE LOCATION (Hidden by default) -->
+  <div id="screen-2" class="hidden">
+    <h2>Choose Your Place</h2>
+    <p>Curious? Here are our most popular places</p>
+
+    <div class="location-cards-container">
+      <!-- BURGER KING CARD -->
+      <div class="location-card" id="card-burger-king">
+        <h3>BURGERKING</h3>
+        <p>100 Washington St<br>Dorchester, MA 02121</p>
+        <span class="time-badge">8-12 Min</span>
+      </div>
+
+      <!-- SCHOOL CAFE CARD -->
+      <div class="location-card" id="card-school-cafe">
+        <h3>SCHOOL CAFE</h3>
+        <p>40 Washington St<br>Dorchester, MA 02121</p>
+        <span class="time-badge">5-10 Min</span>
+      </div>
+
+      <!-- SUNS PIZZA CARD -->
+      <div class="location-card" id="card-suns-pizza">
+        <h3>SUNSPIZZA</h3>
+        <p>46 Washington St<br>Dorchester, MA 02121</p>
+        <span class="time-badge">15-20 Min</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- SCREEN 3: RESTAURANT MENU (Hidden by default) -->
+  <div id="screen-3" class="hidden">
+    <h2 id="selected-restaurant-title">Restaurant Menu</h2>
+    <p id="menu-subtitle">Choose your meal of choice</p>
+
+    <!-- DYNAMIC MENU CONTAINER (JavaScript injects items here) -->
+    <div class="menu-container" id="menu-container"></div>
+
+    <!-- MENU LIVE TOTAL DISPLAY -->
+    <p style="text-align: center; font-size: 1.2rem; font-weight: bold; color: #d32f2f; margin-top: 15px;">
+      Total: $<span id="menu-total-price">0.00</span>
+    </p>
+
+    <button id="ready-order-btn">Ready to order</button>
+  </div>
+
+  <!-- SCREEN 4: CHECKOUT FORM & CONFIRMATION (Hidden by default) -->
+  <div id="screen-4" class="hidden">
+    
+    <form id="checkout-form">
+      <h2>Checkout Details</h2>
+      <p>Enter your details to complete your order</p>
+
+      <label for="customer-name">Full Name:</label>
+      <input type="text" id="customer-name" placeholder="Enter your full name" required>
+
+      <label for="pickup-time">Pickup Time:</label>
+      <input type="time" id="pickup-time" required>
+
+      <!-- FEATURE 13: SPECIAL INSTRUCTIONS / NOTES INPUT -->
+      <label for="order-notes">Special Instructions / Notes:</label>
+      <input type="text" id="order-notes" placeholder="e.g., Extra sauce, no onions (optional)">
+
+      <!-- ERROR MESSAGE CONTAINER -->
+      <p id="form-error-msg" class="hidden" style="color: #d32f2f; font-weight: bold; text-align: center; margin: 10px 0;"></p>
+
+      <button type="submit" id="place-order-btn">Place Order</button>
+    </form>
+
+    <!-- ORDER CONFIRMATION BOX -->
+    <div id="order-confirmation" class="hidden">
+      <h3 style="color: #d32f2f; text-align: center;">Order Confirmed! 🎉</h3>
+      <p id="confirmation-details" style="text-align: center; color: #333333;"></p>
+
+      <!-- FINAL RECEIPT GRAND TOTAL DISPLAY -->
+      <p style="text-align: center; font-size: 1.2rem; font-weight: bold; color: #d32f2f;">
+        Grand Total: $<span id="receipt-total-price">0.00</span>
+      </p>
+
+      <button id="reset-app-btn">Order Again</button>
+    </div>
+
+  </div>
+
+  <!-- SCRIPT CONNECTOR (MUST BE AT THE VERY BOTTOM) -->
+  <script src="script.js"></script>
+</body>
+</html>
